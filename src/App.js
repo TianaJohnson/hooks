@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Toggle from './Toggle.js';
 
 
 //useState can only be used on a function based component
@@ -12,7 +13,9 @@ const App = () => {
   return (
     <div className="main-wrapper">
       <h1>Level Up Dishes</h1>
-      <input type="text" onChange={() => null} value={''} />
+      <h1>{name}</h1>
+      <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
+      <Toggle/>
     </div>
   );
 };
