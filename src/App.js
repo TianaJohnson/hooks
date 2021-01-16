@@ -16,7 +16,7 @@ const App = () => {
       <Toggle/>
       <form onSubmit={(e) => {
         e.preventDefault();
-        formSubmit();
+        formSubmit(name, setName);
       }}>
      
       <input type="text"
@@ -29,8 +29,9 @@ const App = () => {
   );
 };
 
-const formSubmit = () => {
-  console.log('email sent');
+const formSubmit = (value, setValue) => {
+  console.log('email sent ' + value + '!');
+  setValue('');
 }
 
 export default App;
