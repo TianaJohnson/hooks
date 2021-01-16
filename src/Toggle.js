@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 
 const Toggle = () => {
+
+    const [isToggled, setToggle] = useState(false);
+
     return (
         <div>
-           <button>Toggle</button>
-           <h2>Hello!</h2>
+           <button onClick={() => setToggle(!isToggled)}>Toggle</button>
+           {isToggled && <h2>Hello!</h2>}
          </div>
-    )
-}
+    );
+};
 
 export default Toggle;
+
+
 // export default class Refactor extends Component {
 //     state = {
 //       isToggled: false
