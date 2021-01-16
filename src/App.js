@@ -5,7 +5,9 @@ import React, {useState} from 'react';
 // if using class base components, use State
 const App = () => {
 
-  const [value, setvalue] = useState(initialState);
+  // const [value, setValue] = useState(initialState);
+
+  const [name, setName] = useState('');
 
   return (
     <div className="main-wrapper">
