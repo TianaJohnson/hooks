@@ -14,14 +14,23 @@ const App = () => {
     <div className="main-wrapper">
       <h1>Level Up Dishes</h1>
       <Toggle/>
-      <form>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        formSubmit();
+      }}>
      
       <input type="text"
              onChange={(e) => setName(e.target.value)} 
              value={name} />
+          <button> Submit</button>
       </form>
+
     </div>
   );
 };
+
+const formSubmit = () => {
+  console.log('email sent');
+}
 
 export default App;
