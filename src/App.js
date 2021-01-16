@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 
+
+//useState can only be used on a function based component
+// if using class base components, use State
 const App = () => {
+
+  const [value, setvalue] = useState(initialState);
+
   return (
     <div className="main-wrapper">
       <h1>Level Up Dishes</h1>
