@@ -14,10 +14,12 @@ const App = () => {
     <div className="main-wrapper">
       <h1>Level Up Dishes</h1>
       <Toggle/>
-      <h1>{name}</h1>
+      <form>
      
-      <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
-  
+      <input type="text"
+             onChange={(e) => setName(e.target.value)} 
+             value={name} />
+      </form>
     </div>
   );
 };
