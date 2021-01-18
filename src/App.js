@@ -10,6 +10,7 @@ const App = () => {
   // const [value, setValue] = useState(initialState);
   const [name, setName] = useTitleInput('');
   const ref = useRef();
+  
 
   // useEffect(()=> {
   //   document.title = name;  //<-document.title targets the tab
@@ -17,7 +18,7 @@ const App = () => {
 
   return (
     <div className="main-wrapper" ref = {ref}>
-      <h1>Level Up Dishes</h1>
+      <h1 onClick={() => ref.current.classList.add('new-fake-class')}>Level Up Dishes</h1>
       <Toggle/>
       <form onSubmit={(e) => {
         e.preventDefault();
