@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Toggle from './Toggle.js';
+import { useTitleInput } from './hooks/useTitleInput';
 
 
 //useState can only be used on a function based component
@@ -9,9 +10,9 @@ const App = () => {
   // const [value, setValue] = useState(initialState);
   const [name, setName] = useTitleInput('');
 
-  useEffect(()=> {
-    document.title = name;  //<-document.title targets the tab
-  })
+  // useEffect(()=> {
+  //   document.title = name;  //<-document.title targets the tab
+  // })
 
   return (
     <div className="main-wrapper">
@@ -31,14 +32,7 @@ const App = () => {
   );
 };
 
-//custom hooooook
-function useTitleInput(initialValue) {
-  const [value, setValue] = useState(initialValue);
-    useEffect(() => {
-      document.title = value;
-    });
-    return [value, setValue];
-}
+
 
 
 
