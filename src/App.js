@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Toggle from './Toggle.js';
 
 
@@ -9,6 +9,10 @@ const App = () => {
   // const [value, setValue] = useState(initialState);
 
   const [name, setName] = useState('');
+
+  useEffect(()=> {
+    document.title = name;  //<-document.title targets the tab
+  })
 
   return (
     <div className="main-wrapper">
