@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Toggle from './Toggle.js';
 import { useTitleInput } from './hooks/useTitleInput';
 
@@ -9,13 +9,14 @@ const App = () => {
 
   // const [value, setValue] = useState(initialState);
   const [name, setName] = useTitleInput('');
+  const ref = useRef();
 
   // useEffect(()=> {
   //   document.title = name;  //<-document.title targets the tab
   // })
 
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper" ref = {ref}>
       <h1>Level Up Dishes</h1>
       <Toggle/>
       <form onSubmit={(e) => {
