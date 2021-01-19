@@ -1,5 +1,7 @@
 import React, { useReducer } from 'react';
 
+const initialState = { count: 0 };
+
 function reducer(state, action){
     switch (action.type) {
         case 'add':
@@ -12,8 +14,9 @@ function reducer(state, action){
             }
         case 'reset':
             return {
-                count: 0
+                count: initialState
             }
+        default: throw new Error();
     }
 }
 
