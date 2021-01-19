@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, createContext} from 'react';
 import Toggle from './Toggle.js';
+import Counter from './Counter';
 import { useTitleInput } from './hooks/useTitleInput';
 
 export const userContext = createContext();
