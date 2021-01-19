@@ -14,7 +14,7 @@ function reducer(state, action){
             }
         case 'reset':
             return {
-                count: initialState
+                count: initialState.count
             }
         default: throw new Error();
     }
@@ -24,9 +24,10 @@ const Counter = () => {
     const [state, dispatch] = useReducer(reducer, initialState);
     return (
     <div>
-        <button> + </button>
-        <button> - </button>
-        <button>Reset</button>
+        <h3>{state.count}</h3>
+        <button onClick={() => dispatch({type:'add'})}> + </button>
+        <button onClick={() => dispatch({type:'minus'})}> - </button>
+        <button onClick={() => dispatch({type:'reset'})}>Reset</button>
     </div>
     )
 }
