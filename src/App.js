@@ -34,6 +34,7 @@ const App = () => {
              value={name} />
           <button> Submit</button>
       </form>
+      <Counter/>
 
     </div>
     </userContext.Provider>
