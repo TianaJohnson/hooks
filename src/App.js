@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, createContext} from 'react';
 import Toggle from './Toggle.js';
 import { useTitleInput } from './hooks/useTitleInput';
 
-const userContext = createContext();
+export const userContext = createContext();
 //useState can only be used on a function based component
 // if using class base components, use State
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
   return (
     <userContext.Provider
         value={{
-          user:true
+          user:false
         }}>
     <div className="main-wrapper" ref = {ref}>
       <h1 onClick={() => ref.current.classList.add('new-fake-class')}>Level Up Dishes</h1>
