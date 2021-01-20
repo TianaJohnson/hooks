@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, createContext} from 'react';
+import React, { useState, useEffect, useRef, createContext, useMemo} from 'react';
 import Toggle from './Toggle.js';
 import Counter from './Counter';
 import { useTitleInput } from './hooks/useTitleInput';
@@ -11,6 +11,10 @@ const App = () => {
   // const [value, setValue] = useState(initialState);
   const [name, setName] = useTitleInput('');
   const ref = useRef();
+
+  const reverseWord = word => {
+    return word.split("").reverse().join("");
+  }
   
 
   // useEffect(()=> {
