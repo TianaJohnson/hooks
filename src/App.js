@@ -15,6 +15,8 @@ const App = () => {
   const reverseWord = word => {
     return word.split("").reverse().join("");
   }
+
+  const TitleReversed = reverseWord(' Level up  Dishes')
   
 
   // useEffect(()=> {
@@ -28,6 +30,7 @@ const App = () => {
         }}>
     <div className="main-wrapper" ref = {ref}>
       <h1 onClick={() => ref.current.classList.add('new-fake-class')}>Level Up Dishes</h1>
+      {TitleReversed}
       <Toggle/>
       <form onSubmit={(e) => {
         e.preventDefault();
