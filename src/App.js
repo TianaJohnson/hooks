@@ -13,6 +13,7 @@ const App = () => {
   const ref = useRef();
 
   const reverseWord = word => {
+    console.log('function called')
     return word.split("").reverse().join("");
   }
 
