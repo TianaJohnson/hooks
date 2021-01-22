@@ -19,7 +19,7 @@ const App = () => {
 
  
 
-  const TitleReversed = reverseWord(name)
+  const TitleReversed = useMemo(() => reverseWord('Level up Dishes')) 
   
 
   // useEffect(()=> {
