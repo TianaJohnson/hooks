@@ -21,7 +21,7 @@ const App = () => {
  
 // caches. The [] checks to see if the item has changed.
 // if it has not, it will not update.
-  const TitleReversed = useMemo(() => reverseWord(title), [title]) 
+  const TitleReversed = useMemo(() => reverseWord(name), [name]) 
   
 
   // useEffect(()=> {
@@ -34,7 +34,7 @@ const App = () => {
           user:false
         }}>
     <div className="main-wrapper" ref = {ref}>
-      <h1 onClick={() => ref.current.classList.add('new-fake-class')}>Level Up Dishes</h1>
+      <h1 onClick={() => ref.current.classList.add('new-fake-class')}>{TitleReversed}</h1>
       {TitleReversed}
       <Toggle/>
       <form onSubmit={(e) => {
