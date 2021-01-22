@@ -17,9 +17,11 @@ const App = () => {
     return word.split("").reverse().join("");
   }
 
+    const title = 'Level up Dishes';
  
-
-  const TitleReversed = useMemo(() => reverseWord('Level up Dishes')) 
+// caches. The [] checks to see if the item has changed.
+// if it has not, it will not update.
+  const TitleReversed = useMemo(() => reverseWord(title), [title]) 
   
 
   // useEffect(()=> {
