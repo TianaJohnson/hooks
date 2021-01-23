@@ -36,8 +36,8 @@ const App = () => {
           user:false
         }}>
     <div className="main-wrapper" ref = {ref}>
-      <h1 onClick={() => ref.current.classList.add('new-fake-class')}>{TitleReversed}</h1>
-      {TitleReversed}
+      <h1 onClick={() => ref.current.classList.add('new-fake-class')}>Level Up Dishes</h1>
+    
       <Toggle/>
       <form onSubmit={(e) => {
         e.preventDefault();
