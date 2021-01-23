@@ -6,7 +6,7 @@ function useTitleInput(initialValue) {
       useEffect(() => {
         document.title = value;
       });
-      useDebugValue('hi');
+      useDebugValue(value.length > 0 ?  'Full' : 'empty');
 
       return [value, setValue];
   }
