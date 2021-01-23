@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useDebugValue } from 'react';
 
 //custom hooooook
 function useTitleInput(initialValue) {
@@ -6,7 +6,10 @@ function useTitleInput(initialValue) {
       useEffect(() => {
         document.title = value;
       });
+      useDebugValue(value);
+
       return [value, setValue];
   }
+
 
 export  { useTitleInput };
