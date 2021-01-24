@@ -19,7 +19,7 @@ const App = () => {
   const [dishes, setDishes] = useState([])
 
   const fetchDishes = async () => {
-    console.log('hello')
+    console.log('ran')
     const res = await fetch(
       `https://my-json-server.typicode.com/leveluptuts/fakeapi/dishes`
       );
@@ -29,7 +29,7 @@ const App = () => {
 // the [] act as a componenet did mount and will not update 
   useEffect( () => {
    fetchDishes();
-  }, []);
+  }, [name]);
 
   const reverseWord = (word) => {
     console.log("function called")
