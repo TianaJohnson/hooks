@@ -26,7 +26,7 @@ const App = () => {
     const data = await res.json();
     setDishes(data);
   }
-
+// the [] act as a componenet did mount and will not update 
   useEffect( () => {
    fetchDishes();
   }, []);
