@@ -18,6 +18,18 @@ const App = () => {
   const ref = useRef()
   const [dishes, setDishes] = useState([])
 
+  const fetchDishes = async () => {
+    const res = await fetch(
+      `https://my-json-server.typicode.com/leveluptuts/fakeapi/dishes`
+      );
+    const data = await res.json();
+    setDishes(data);
+  }
+
+  useEffect( () => {
+   // fetchDishes();
+  });
+
   const reverseWord = (word) => {
     console.log("function called")
     return word.split("").reverse().join("")
@@ -68,7 +80,7 @@ const App = () => {
             </div>
           </article>
         ))}
-        ;
+        
       </div>
     </userContext.Provider>
   )
