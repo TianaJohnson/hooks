@@ -9,7 +9,7 @@ const Toggle = () => {
 
     return (
         <div>
-           <button>Toggle</button>
+           <button onClick={() => setToggle(!isToggled)}>Toggle</button>
            {isToggled && <h2>Hello!</h2>}
          </div>
     );
