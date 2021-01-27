@@ -15,3 +15,5 @@ const DishForm = () => {
         </div>
     )
 }
+
+export default DishForm;
