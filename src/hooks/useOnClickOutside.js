@@ -2,7 +2,14 @@ import { useEffect } from 'react';
 
 function useOnClickOutside(ref){
     useEffect(() => {
-        console.log(ref.current, "hey hey");
+
+        const listener = () => {
+            console.log(ref.current, "hey hey");
+        }
+
+        document.addEventListener('mousedown', listener);
+        document.addEventListener('touchstart', listener);
+        
     }, [])
 }
 
