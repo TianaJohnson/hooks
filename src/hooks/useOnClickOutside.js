@@ -3,8 +3,11 @@ import { useEffect } from 'react';
 function useOnClickOutside(ref){
     useEffect(() => {
 
-        const listener = () => {
-            console.log(ref.current, "hey hey");
+        const listener = (event) => {
+
+            if(!ref.current || ref.current.contains(event.target)){
+                console.log(ref.current, "hey hey");
+            }
         }
 
         document.addEventListener('mousedown', listener);
