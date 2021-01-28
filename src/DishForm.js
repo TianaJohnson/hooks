@@ -6,6 +6,8 @@ const DishForm = () => {
 
     const ref = useRef();
 
+    useOnClickOutside(ref);
+
     useBodyScrollLock();
     return (
         <div className = "dish-card" ref = {ref}>

@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 
-function useOnClickOutside(){
+function useOnClickOutside(ref){
     useEffect(() => {
-
+        console.log(ref.current, "hey hey");
     }, [])
 }
+
+export { useOnClickOutside };
