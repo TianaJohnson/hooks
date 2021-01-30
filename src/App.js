@@ -8,6 +8,7 @@ import React, {
 import Toggle from "./Toggle.js"
 import Counter from "./Counter"
 import { useTitleInput } from "./hooks/useTitleInput"
+import { useSpring, animated } from "react-spring";
 
 export const userContext = createContext()
 //useState can only be used on a function based component
@@ -18,6 +19,8 @@ const App = () => {
   const ref = useRef()
   const [dishes, setDishes] = useState([])
 
+  const props = useSpring({opacity : 1 , from: { opacity : 0 } });
+
   const fetchDishes = async () => {
     console.log('ran')
     const res = await fetch(
@@ -26,21 +29,24 @@ const App = () => {
     const data = await res.json();
     setDishes(data);
   }
-// the [] act as a componenet did mount and will not update 
-  useEffect( () => {
-   fetchDishes();
-  }, [name]);
 
-  const reverseWord = (word) => {
-    console.log("function called")
-    return word.split("").reverse().join("")
-  }
+  
+
+// the [] act as a componenet did mount and will not update 
+  // useEffect( () => {
+  //  fetchDishes();
+  // }, [name]);
+
+  // const reverseWord = (word) => {
+  //   console.log("function called")
+  //   return word.split("").reverse().join("")
+  // }
 
   const title = "Level up Dishes"
 
   // caches. The [] checks to see if the item has changed.
   // if it has not, it will not update.
-  const TitleReversed = useMemo(() => reverseWord(name), [name])
+  // const TitleReversed = useMemo(() => reverseWord(name), [name])
 
   // useEffect(()=> {
   //   document.title = name;  //<-document.title targets the tab
