@@ -1,14 +1,13 @@
 import React, {
-  useState,
   useEffect,
   useRef,
   createContext,
-  useMemo,
 } from "react"
 import Toggle from "./Toggle.js"
 import Counter from "./Counter"
 import { useTitleInput } from "./hooks/useTitleInput"
 import { useSpring, animated } from "react-spring";
+import useAbortableFetch from 'use-abortable-fetch';
 
 export const userContext = createContext()
 //useState can only be used on a function based component
@@ -17,20 +16,14 @@ const App = () => {
   
   const [name, setName] = useTitleInput("")
   const ref = useRef()
-  const [dishes, setDishes] = useState([])
+  // const [dishes, setDishes] = useState([])
 
   const props = useSpring({opacity : 1 , from: { opacity : 0 } });
 
-  const fetchDishes = async () => {
-    console.log('ran')
-    const res = await fetch(
-      `https://my-json-server.typicode.com/leveluptuts/fakeapi/dishes`
-      );
-    const data = await res.json();
-    setDishes(data);
-  }
+  const { data, loading } = useAbortableFetch
+  (`https://my-json-server.typicode.com/leveluptuts/fakeapi/dishes`);
+  console.log('data', data);
 
-  
 
 // the [] act as a componenet did mount and will not update 
   // useEffect( () => {
@@ -53,15 +46,12 @@ const App = () => {
   // })
 
   return (
-    <userContext.Provider
-      value={{
-        user: false,
-      }}
-    >
       <div className="main-wrapper" ref={ref}>
-        <h1 onClick={() => ref.current.classList.add("new-fake-class")}>
+        <animated.h1
+        style={props}
+        onClick={() => ref.current.classList.add("new-fake-class")}>
           Level Up Dishes
-        </h1>
+        </animated.h1>
         <Toggle />
         <form
           onSubmit={(e) => {
@@ -76,7 +66,7 @@ const App = () => {
           <button> Submit</button>
         </form>
         <Counter />
-        {dishes.map((dish) => (
+        {data && data.map((dish) => (
           <article className=" dish-card dish-card--withImage">
             <h3>{dish.name}</h3>
             <p>{dish.desc}</p>
@@ -89,7 +79,6 @@ const App = () => {
         ))}
         
       </div>
-    </userContext.Provider>
   )
 }
 
