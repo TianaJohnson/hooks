@@ -13,7 +13,7 @@ export const userContext = createContext()
 //useState can only be used on a function based component
 // if using class base components, use State
 const App = () => {
-  // const [value, setValue] = useState(initialState);
+  
   const [name, setName] = useTitleInput("")
   const ref = useRef()
   const [dishes, setDishes] = useState([])
