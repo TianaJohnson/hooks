@@ -24,7 +24,7 @@ const App = () => {
   (`https://my-json-server.typicode.com/leveluptuts/fakeapi/dishes`);
   console.log('data', data);
 
-
+//im sleepy
 // the [] act as a componenet did mount and will not update 
   // useEffect( () => {
   //  fetchDishes();
